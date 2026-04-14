@@ -1,0 +1,19 @@
+# Core API
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+python-multipart==0.0.9
+
+# fMRI Processing
+nibabel==5.2.1
+nilearn==0.10.3
+scikit-learn==1.4.2
+matplotlib==3.8.4
+numpy==1.26.4
+scipy==1.13.0
+
+# PDF Generation
+reportlab==4.2.0
+Pillow==10.3.0
+
+# Utilities
+python-dotenv==1.0.1

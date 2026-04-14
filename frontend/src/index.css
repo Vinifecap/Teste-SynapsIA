@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #0a0a14;
+    --surface: #12121a;
+    --card: #18181b;
+    --border: #27272a;
+    --accent: #7b61ff;
+    --text: #f0eff4;
+    --muted: #a1a1aa;
+    --danger: #ef4444;       
+    --warn: #f59e0b;         
+    --ok: #22c55e;           
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Sora', system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* Typography utilities */
+.font-heading { font-family: 'Sora', sans-serif; }
+.font-drama { font-family: 'Instrument Serif', serif; }
+.font-data { font-family: 'Fira Code', monospace; }
+
+/* Micro-Interactions: Magnetic Button */
+.btn-magnetic {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(18, 18, 26, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(123, 97, 255, 0.3);
+  border-radius: 9999px; 
+  color: var(--text);
+  font-weight: 600;
+  padding: 14px 32px;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-magnetic:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 24px rgba(123, 97, 255, 0.25);
+  border-color: var(--accent);
+}
+
+.btn-magnetic span.slider-bg {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(123, 97, 255, 0.15);
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: -1;
+  border-radius: 9999px; /* Match button radius */
+}
+
+.btn-magnetic:hover span.slider-bg {
+  transform: translateY(0);
+}
+
+/* Subtle Link Interaction */
+.interactive-link {
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.3s;
+  display: inline-block;
+}
+.interactive-link:hover {
+  transform: translateY(-1px);
+  color: var(--accent);
+}
+
+/* Hero Gradient */
+.hero-gradient {
+  background: linear-gradient(to top, var(--bg) 0%, transparent 100%);
+}
+
+/* Panels / Cards */
+.vapor-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+
+.glow-accent {
+  box-shadow: 0 0 30px rgba(123, 97, 255, 0.15), inset 0 0 20px rgba(123, 97, 255, 0.05);
+  border-color: rgba(123, 97, 255, 0.4);
+}
+
+/* Shimmer Loading */
+.shimmer {
+  background: linear-gradient(90deg, var(--surface) 25%, var(--card) 50%, var(--surface) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+/* Hide scrollbar for cleanly designed carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
