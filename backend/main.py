@@ -6,10 +6,19 @@ import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from dotenv import load_dotenv
+
+load_dotenv()
+
+MPLCONFIGDIR = os.getenv("MPLCONFIGDIR", ".matplotlib_cache")
+os.environ.setdefault("MPLCONFIGDIR", os.path.abspath(MPLCONFIGDIR))
+os.makedirs(os.environ["MPLCONFIGDIR"], exist_ok=True)
+
 from routes.exam import router as exam_router
 
 # Ensure temp upload directory exists
-os.makedirs("temp_uploads", exist_ok=True)
+UPLOAD_DIR = os.getenv("UPLOAD_DIR", "temp_uploads")
+os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 app = FastAPI(
     title="SynapsIA API",
@@ -31,7 +40,7 @@ app.add_middleware(
 )
 
 # Serve generated brain images as static files
-app.mount("/uploads", StaticFiles(directory="temp_uploads"), name="uploads")
+app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")
 
 # Register exam routes under /api
 app.include_router(exam_router, prefix="/api")

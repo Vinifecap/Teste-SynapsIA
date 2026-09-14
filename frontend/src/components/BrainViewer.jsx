@@ -13,7 +13,7 @@ const IMAGE_LABELS = {
   zscore_chart: { title: 'Z-Scores por Região',      subtitle: 'Desvio relativo à linha de base' },
 }
 
-const BASE_URL = 'http://localhost:8000'
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
 
 export default function BrainViewer({ images = {} }) {
   const entries = Object.entries(images).filter(([, url]) => url)

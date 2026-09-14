@@ -20,6 +20,7 @@ router = APIRouter()
 exam_store: dict = {}
 
 ALLOWED_EXTENSIONS = (".nii", ".nii.gz")
+UPLOAD_DIR = os.getenv("UPLOAD_DIR", "temp_uploads")
 
 
 def _is_valid_extension(filename: str) -> bool:
@@ -94,7 +95,7 @@ async def upload_exam(
         )
 
     exam_id = str(uuid.uuid4())
-    exam_dir = os.path.join("temp_uploads", exam_id)
+    exam_dir = os.path.join(UPLOAD_DIR, exam_id)
     images_dir = os.path.join(exam_dir, "images")
     os.makedirs(images_dir, exist_ok=True)
 
@@ -164,7 +165,7 @@ async def export_pdf(exam_id: str):
     if entry["status"] != "completed":
         raise HTTPException(status_code=202, detail="Processamento em andamento")
 
-    exam_dir = os.path.join("temp_uploads", exam_id)
+    exam_dir = os.path.join(UPLOAD_DIR, exam_id)
     pdf_path = generate_pdf(entry["report"], exam_dir)
 
     return FileResponse(

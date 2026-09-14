@@ -4,7 +4,8 @@ import axios from 'axios'
 import NeuralBackground from '../components/NeuralBackground'
 import ProgressBar from '../components/ProgressBar'
 
-const API = 'http://localhost:8000/api'
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
+const API = `${API_BASE_URL}/api`
 const ALLOWED = ['.nii', '.nii.gz']
 
 /**
