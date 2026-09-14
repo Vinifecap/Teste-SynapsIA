@@ -1,110 +1,47 @@
 # SynapsIA
 
-Projeto com backend em Python/FastAPI e frontend em React/Vite preparado para rodar localmente, sem Docker.
+Atualmente, este projeto contém somente a Homepage da SynapsIA, desenvolvida com React e Vite.
 
-## Pre-requisitos
+O MVP anterior de processamento de exames fMRI foi removido. Por isso, não há backend, fluxo de upload ou página de relatório nesta versão. O item **Portal MVP** da barra de navegação está temporariamente desativado até a integração do novo MVP.
+
+## Pré-requisitos
 
 - Git
-- Python 3.14
 - Node.js 20 ou superior
+- npm
 
-## Como clonar o projeto
+## Como executar localmente
 
-```bash
-git clone <URL_DO_REPOSITORIO>
-cd Teste-SynapsIA
-```
-
-Se voce ja tem a pasta do projeto no notebook, apenas abra a pasta `Teste-SynapsIA` no VS Code.
-
-## Variaveis de ambiente
-
-Use o arquivo `.env.example` como referencia:
-
-```bash
-copy .env.example .env
-```
-
-No frontend, se quiser configurar explicitamente a URL da API:
-
-```bash
-cd frontend
-copy .env.example .env
-```
-
-Por padrao, o frontend usa `http://localhost:8000` para falar com o backend.
-
-## Como iniciar o backend
-
-Abra um terminal na raiz do projeto e execute:
-
-```bash
-cd backend
-python -m venv .venv
-.\.venv\Scripts\activate
-pip install -r requirements.txt
-uvicorn main:app --host 127.0.0.1 --port 8000 --reload
-```
-
-O backend ficara disponivel em:
-
-```text
-http://localhost:8000
-```
-
-Para testar rapidamente:
-
-```text
-http://localhost:8000/health
-```
-
-## Como iniciar o frontend
-
-Abra outro terminal na raiz do projeto e execute:
+Na raiz do projeto, acesse o diretório do frontend e instale as dependências:
 
 ```bash
 cd frontend
 npm install
+```
+
+Inicie o servidor de desenvolvimento:
+
+```bash
 npm run dev
 ```
 
-No PowerShell, se o comando `npm` for bloqueado pela politica de execucao de scripts, use:
+Se o PowerShell bloquear a execução de `npm.ps1`, use os comandos equivalentes `npm.cmd install`, `npm.cmd run dev` e `npm.cmd run build`.
 
-```bash
-npm.cmd install
-npm.cmd run dev
-```
-
-O frontend ficara disponivel em:
+A Homepage ficará disponível em:
 
 ```text
 http://localhost:5173
 ```
 
-## Qual endereco abrir no navegador
+Para encerrar o servidor, pressione `Ctrl + C` no terminal.
 
-Abra:
+## Build de produção
 
-```text
-http://localhost:5173
-```
-
-## Como parar cada servidor
-
-No terminal do backend, pressione:
-
-```text
-Ctrl + C
-```
-
-No terminal do frontend, pressione:
-
-```text
-Ctrl + C
-```
-
-Se o ambiente virtual Python estiver ativo e voce quiser sair dele:
+Para gerar e validar a versão de produção:
 
 ```bash
-deactivate
+cd frontend
+npm run build
 ```
+
+Os arquivos gerados ficam em `frontend/dist`.
