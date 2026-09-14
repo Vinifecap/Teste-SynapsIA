@@ -8,9 +8,9 @@ gsap.registerPlugin(ScrollTrigger);
 // --- Componente: Diagnostic Shuffler (Card 1) ---
 function DiagnosticShuffler() {
   const [cards, setCards] = useState([
-    { id: 1, title: 'Aquisição de Imagem', time: '00:15', active: true },
-    { id: 2, title: 'Processamento BOLD', time: '01:30', active: false },
-    { id: 3, title: 'Segmentação Neural', time: '02:45', active: false }
+    { id: 1, title: 'Avaliação inicial', time: '00:15', active: true },
+    { id: 2, title: 'Objetivos do tratamento', time: '01:30', active: false },
+    { id: 3, title: 'Exercícios sugeridos', time: '02:45', active: false }
   ]);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ function DiagnosticShuffler() {
 
   return (
     <div className="vapor-card relative h-80 flex flex-col items-center justify-center p-8">
-      <div className="absolute top-6 left-6 text-syn-muted font-heading font-semibold text-sm">/01 Shuffler</div>
+      <div className="absolute top-6 left-6 text-syn-muted font-heading font-semibold text-sm">/01 Planejamento</div>
       
       <div className="relative w-full max-w-[220px] h-32 mt-6">
         {cards.map((c, i) => {
@@ -57,8 +57,8 @@ function DiagnosticShuffler() {
       </div>
 
       <div className="mt-auto pt-6 text-center w-full">
-        <h3 className="font-heading font-bold text-xl text-syn-text">Velocidade Extrema</h3>
-        <p className="text-sm text-syn-muted mt-2">Análise de fMRI em minutos, não em dias.</p>
+        <h3 className="font-heading font-bold text-xl text-syn-text">Cuidado personalizado</h3>
+        <p className="text-sm text-syn-muted mt-2">Cada plano considera as necessidades e os objetivos definidos para o paciente.</p>
       </div>
     </div>
   );
@@ -66,11 +66,11 @@ function DiagnosticShuffler() {
 
 // --- Componente: Telemetry Typewriter (Card 2) ---
 function TelemetryTypewriter() {
-  const codeString = `> INITIATING NEURAL SCAN...
-> DETECTING BOLD SIGNALS
-> 12 ANOMALIES IDENTIFIED
-> APPLYING ML FILTERS
-> PRECISION LEVEL: 99.8%`;
+  const codeString = `> INICIANDO ACOMPANHAMENTO...
+> MOVIMENTO IDENTIFICADO
+> EXERCÍCIO EM ANDAMENTO
+> EXECUÇÃO ANALISADA
+> PROGRESSO REGISTRADO`;
   
   const [text, setText] = useState('');
   const [index, setIndex] = useState(0);
@@ -94,13 +94,13 @@ function TelemetryTypewriter() {
   return (
     <div className="vapor-card h-80 flex flex-col p-8 relative">
       <div className="flex justify-between items-center mb-6">
-        <div className="text-syn-muted font-heading font-semibold text-sm">/02 Typewriter</div>
+        <div className="text-syn-muted font-heading font-semibold text-sm">/02 Acompanhamento</div>
         <div className="flex items-center gap-2">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-syn-accent opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-syn-accent"></span>
           </span>
-          <span className="font-data text-xs text-syn-accent tracking-widest">LIVE FEED</span>
+          <span className="font-data text-xs text-syn-accent tracking-widest">ACOMPANHAMENTO AO VIVO</span>
         </div>
       </div>
       
@@ -112,8 +112,8 @@ function TelemetryTypewriter() {
       </div>
 
       <div className="mt-6 text-center w-full">
-        <h3 className="font-heading font-bold text-xl text-syn-text">Precisão baseada em IA</h3>
-        <p className="text-sm text-syn-muted mt-2">Identifica alterações neurais milimétricas instantaneamente.</p>
+        <h3 className="font-heading font-bold text-xl text-syn-text">Análise em tempo real</h3>
+        <p className="text-sm text-syn-muted mt-2">A plataforma acompanha os exercícios e ajuda o profissional a observar cada movimento.</p>
       </div>
     </div>
   );
@@ -158,7 +158,7 @@ function CursorProtocolScheduler() {
 
   return (
     <div className="vapor-card h-80 flex flex-col p-8 relative" ref={gridRef}>
-      <div className="absolute top-6 left-6 text-syn-muted font-heading font-semibold text-sm">/03 Scheduler</div>
+      <div className="absolute top-6 left-6 text-syn-muted font-heading font-semibold text-sm">/03 Registro</div>
       
       <div className="relative mt-8 h-[120px] w-[200px] mx-auto">
         <div className="grid grid-cols-5 gap-2">
@@ -171,7 +171,7 @@ function CursorProtocolScheduler() {
         </div>
         
         <div className="absolute -bottom-2 right-0 save-btn-target border border-syn-border px-3 py-1 text-xs rounded-full font-heading text-syn-text transition-colors">
-          Validar
+          Registrar
         </div>
 
         {/* Cursor SVG */}
@@ -181,8 +181,8 @@ function CursorProtocolScheduler() {
       </div>
 
       <div className="mt-auto pt-6 text-center w-full">
-        <h3 className="font-heading font-bold text-xl text-syn-text">Validação Imediata</h3>
-        <p className="text-sm text-syn-muted mt-2">Pré-relatório visual pronto para validação médica.</p>
+        <h3 className="font-heading font-bold text-xl text-syn-text">Evolução contínua</h3>
+        <p className="text-sm text-syn-muted mt-2">Profissional e paciente podem acompanhar o progresso durante o tratamento.</p>
       </div>
     </div>
   );

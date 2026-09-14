@@ -30,24 +30,24 @@ export default function HeroSection() {
       <div className="relative z-20 px-6 md:px-12 w-full max-w-[1400px] mx-auto text-left">
         
         <p className="hero-element font-data text-syn-accent text-sm md:text-base tracking-[0.2em] mb-4 uppercase">
-          Reabilitação por Inteligência Artificial
+          TECNOLOGIA A FAVOR DA RECUPERAÇÃO
         </p>
         
         <h1 className="hero-element text-5xl md:text-7xl lg:text-[5.5rem] font-heading font-extrabold text-syn-text mb-2 leading-none">
-          Diagnóstico neural
+          Movimento acompanhado
         </h1>
         
         <h2 className="hero-element text-6xl md:text-[8rem] lg:text-[10rem] font-drama italic text-syn-accent-light leading-[0.8] mb-6">
-          além da visão.
+          evolução visível.
         </h2>
         
         <p className="hero-element max-w-xl text-syn-muted md:text-lg mt-8 mb-10 leading-relaxed font-sans">
-          Do diagnóstico à reabilitação, conectando cérebro e movimento. Um instrumento digital massivo focado em processar exames fMRI para radiologistas de alta performance.
+          A SynapsIA ajuda profissionais a planejar exercícios, acompanhar os movimentos e visualizar a evolução de cada paciente ao longo do tratamento.
         </p>
 
         <div className="hero-element flex flex-col sm:flex-row items-center gap-4">
           <button className="btn-magnetic w-full sm:w-auto text-base glow-accent">
-            <span>Solicitar Demo</span>
+            <span>Conhecer a SynapsIA</span>
             <ArrowRight size={18} />
             <span className="slider-bg"></span>
           </button>

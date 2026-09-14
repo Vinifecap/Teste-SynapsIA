@@ -33,10 +33,10 @@ export function PhilosophySection() {
       />
       <div className="relative z-10 max-w-4xl">
         <p className="philo-line font-heading text-syn-muted text-lg md:text-2xl mb-6">
-          A maioria dos sistemas foca em arquivar imagens.
+          A maioria das ferramentas registra apenas sessões isoladas.
         </p>
         <p className="philo-line font-drama italic text-5xl md:text-7xl lg:text-[6rem] text-syn-text leading-[0.9]">
-          Nós focamos em <span className="text-syn-accent-light not-italic font-heading tracking-tight drop-shadow-[0_0_30px_rgba(123,97,255,0.4)]">movimento.</span>
+          Nós acompanhamos cada etapa da <span className="text-syn-accent-light not-italic font-heading tracking-tight drop-shadow-[0_0_30px_rgba(123,97,255,0.4)]">evolução.</span>
         </p>
       </div>
     </section>
@@ -79,14 +79,14 @@ export function ProtocolSection() {
   }, []);
 
   const steps = [
-    { num: '01', title: 'Extração de Biometria', desc: 'Processamento de fMRI com identificação paralela de anomalias.', Icon: Fingerprint },
-    { num: '02', title: 'Integração de IA', desc: 'Mapeamento neural com algoritmos de deep learning para classificar padrões BOLD.', Icon: ActivitySquare },
-    { num: '03', title: 'Plataforma de Reabilitação', desc: 'Pré-relatórios gerados para validar o diagnóstico e acelerar o retorno à vida.', Icon: Workflow },
+    { num: '01', title: 'Definição do tratamento', desc: 'O profissional registra as informações do paciente e define os objetivos que serão trabalhados.', Icon: Fingerprint },
+    { num: '02', title: 'Acompanhamento dos exercícios', desc: 'A plataforma sugere exercícios e acompanha os movimentos realizados durante cada sessão.', Icon: ActivitySquare },
+    { num: '03', title: 'Visualização da evolução', desc: 'O progresso é organizado de forma clara para facilitar o acompanhamento do profissional e do paciente.', Icon: Workflow },
   ];
 
   return (
     <section id="protocol" className="py-24 px-6 md:px-12 w-full max-w-[1400px] mx-auto protocol-wrapper" ref={containerRef}>
-      <h2 className="font-heading font-extrabold text-4xl md:text-6xl mb-16 text-center">Protocolo Central</h2>
+      <h2 className="font-heading font-extrabold text-4xl md:text-6xl mb-16 text-center">Como a SynapsIA funciona</h2>
       
       <div className="relative flex flex-col gap-24 h-full pb-32">
         {steps.map((step, i) => (
@@ -118,10 +118,10 @@ export function CtaFooterSection() {
       {/* CTA Get Started - Adapting from Membership pricing rules */}
       <div className="w-full max-w-[800px] mx-auto px-6 mb-32 text-center">
         <div className="vapor-card glow-accent p-12 md:p-16 flex flex-col items-center">
-          <h2 className="font-heading font-extrabold text-4xl md:text-6xl text-syn-text mb-6">Pronto para iniciar?</h2>
-          <p className="text-syn-muted text-lg mb-10 max-w-lg">Solicite uma demonstração do instrumento MVP e veja em tempo real nossa IA conectando cérebro e movimento.</p>
+          <h2 className="font-heading font-extrabold text-4xl md:text-6xl text-syn-text mb-6">Cada movimento conta</h2>
+          <p className="text-syn-muted text-lg mb-10 max-w-lg">Conheça uma nova forma de acompanhar a reabilitação com mais clareza, organização e apoio ao profissional.</p>
           <button className="btn-magnetic w-full md:w-auto text-lg px-8 py-4 glow-accent bg-syn-accent/10">
-            <span>Solicitar Demo Agora</span>
+            <span>Conhecer a SynapsIA</span>
             <ArrowRight size={20} />
             <span className="slider-bg"></span>
           </button>
@@ -132,7 +132,7 @@ export function CtaFooterSection() {
       <div className="bg-syn-bg border-t border-syn-border rounded-t-[4rem] px-8 py-16 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="flex flex-col items-center md:items-start gap-2">
           <div className="font-heading font-bold text-2xl text-syn-text tracking-tight shadow-sm">SynapsIA</div>
-          <p className="text-syn-muted text-sm">Do diagnóstico à reabilitação.</p>
+          <p className="text-syn-muted text-sm">Inteligência para cada movimento.</p>
         </div>
         
         <div className="flex items-center gap-3 bg-syn-surface border border-syn-border px-4 py-2 rounded-full cursor-default">
@@ -140,7 +140,7 @@ export function CtaFooterSection() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-syn-ok opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-syn-ok"></span>
           </span>
-          <span className="font-data text-xs tracking-wider text-syn-muted">SISTEMA OPERACIONAL</span>
+          <span className="font-data text-xs tracking-wider text-syn-muted">PLATAFORMA EM DESENVOLVIMENTO</span>
         </div>
       </div>
     </footer>

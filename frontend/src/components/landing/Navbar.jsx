@@ -43,26 +43,26 @@ export default function Navbar() {
           href="#features"
           className="interactive-link text-syn-text"
         >
-          Tecnologia
+          Recursos
         </a>
 
         <a
           href="#protocol"
           className="interactive-link text-syn-text"
         >
-          Protocolo
+          Como funciona
         </a>
 
         <span
           className="text-syn-muted cursor-not-allowed"
-          title="O novo MVP será integrado em breve"
+          title="A plataforma será integrada em breve"
         >
-          Portal MVP
+          Acessar plataforma
         </span>
       </div>
 
       <button className="btn-magnetic text-sm px-5 py-2">
-        <span>Solicitar Demo</span>
+        <span>Conhecer a SynapsIA</span>
         <ArrowRight size={16} />
         <span className="slider-bg" />
       </button>
