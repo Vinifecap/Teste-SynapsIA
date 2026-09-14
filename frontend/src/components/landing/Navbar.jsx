@@ -25,11 +25,11 @@ export default function Navbar() {
       }`}
     >
       <div className="flex items-center gap-3 cursor-pointer">
-        <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center bg-syn-surface border border-syn-border shrink-0">
+        <div className="w-10 h-10 p-1 rounded-full flex items-center justify-center bg-syn-surface border border-syn-border shrink-0">
           <img
-            src="/logo.png"
+            src="/logo-symbol.svg"
             alt="Logo da SynapsIA"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
           />
         </div>
 
